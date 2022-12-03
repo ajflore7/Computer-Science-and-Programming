@@ -1,0 +1,73 @@
+# Q1
+students = int(input("How many students?\n"))
+
+def gradecounter(midtermscore, midtermwieght, finalscore, finalweight):
+    weightedscore = (midtermscore * midtermwieght) + (finalscore * finalweight)
+    return weightedscore
+
+
+for student in range(students):
+    name = input(f'What is the name of the next student:\n')
+    midterm = int(input(f'What is the midterm score:\n'))
+    final = int(input(f'What is the final score:\n'))
+    x = gradecounter(midterm, .4, final, .6)
+    print(name.title(), f'has the weighted score of:', x)
+    
+    
+# Q2
+import random
+def sumseries(N,K):
+    x = 0
+    for i in range(K):
+        x += (N+i)
+    return x
+
+def sumrandseries(N,K):
+    x = 0
+    for i in range(K):
+        rand = random.randint(N, (N+K))
+        x += rand
+    return x
+
+def compareseries(N,K):
+    difference = sumseries(N, K) - sumrandseries(N, K)
+    return difference
+
+N = int(input(f'Input Number(N)\n'))
+
+K = int(input(f'Input number(K)\n'))
+
+for i in range(0, 4):
+    series = sumseries(N, K)
+    sumrand = sumrandseries(N, K)
+#    diff = compareseries(N, K)
+    print(f'sumseries with N =', N, f'and K =', K, f'returned', series)
+    print(f'sumrandseries with N =', N, f'and K =', K, f'returned', sumrand)
+    print(f'Difference between sumseries and sumrandseries is', series - sumrand)
+
+# Q3
+def printline(numblanks, numsymns, sym):
+    i = ' ' * numblanks
+    x = numsymns * sym
+    y = i + x
+    return y
+
+def printrectangle(length, height, sym):
+    # blank = ' '
+    for i in range(height):
+        x = printline(0, length, sym)
+        print(x)
+    return x
+
+def printtriangle(size, sym): 
+    blank = ' '
+    for i in range(0, size):
+        x = printline(0, size, sym)
+        print(x)
+    return blank
+
+print(printline(5, 10, '*'))
+
+print(printrectangle(8, 3, '*'))
+
+print(printtriangle(5, '*'))
