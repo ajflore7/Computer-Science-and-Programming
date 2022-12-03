@@ -1,0 +1,39 @@
+# Q1
+RunUnitTest = True
+
+def uniqueletters(refstring):
+    x=''
+    for char in refstring:
+        if char not in x:
+            x += char
+        else:
+            x += '+'
+    return x
+print(uniqueletters('settle'))
+
+# Q2
+RunUnitTest = True
+
+def ispalindrome(refstring):
+    if len(refstring) < 3:
+        return False
+    else:
+        return refstring == refstring[::-1]
+
+print(ispalindrome("aa"))
+
+# Q3
+RunUnitTest = True
+def upAstros(refstring):
+    word = refstring.find("Astros")
+    if word == -1:
+        return refstring
+    string = ''
+    beginning = refstring[0:word]
+    astros = "Amazing Astros"
+    end = refstring[word+6:len(refstring)]
+    word = beginning+astros+end
+    return word
+print(upAstros("Yankees played Astros again"))
+
+# 
