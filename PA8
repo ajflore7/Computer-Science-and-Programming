@@ -1,0 +1,67 @@
+# Q1
+RunUnitTest = True
+
+def WhenExpired(decayrate):
+    f = 100
+    e = 0
+    while f >= 50:
+        f = f - (f * (decayrate/100))
+        e = e + 1
+    return e
+print(WhenExpired(20))
+
+# Q2
+# Change the boolean to True to run the unit test
+RunUnitTest = True
+
+def isPrime(number):
+    x = number % 2
+    if x >= 1:
+        answer = False
+    else:
+        answer = True
+    return answer
+
+def firstPrime(K):
+    x = K % 2
+    if x >= 1:
+        x = K
+        print(x)
+    else:
+        print(K)
+print(isPrime(20))
+print(firstPrime(2))
+print(firstPrime(20))
+(NOT COMPLETED)
+
+# Q3
+seller_name = input(f'Hi Fruit Seller, what is your name?')
+orange_price = float(input(f'What is the price of an Orange today?'))
+apple_price = float(input(f'What is the price of an Apple today?'))
+
+print(f'Oranges are', '${:,.2f}'.format(orange_price), f'each. Apples are', '${:,.2f}'.format(apple_price))
+
+orange_total = []
+apples_total = []
+bill = []
+customer = ''
+
+while True:
+    customer = input(f'\nWho is the next customer?\n')
+    if seller_name.title() == customer.title():
+        print(seller_name, f'it is time to close the store.')
+        print(f'We sold', sum(orange_total), f'Oranges and', sum(apples_total), f'Apples for a total of', '${:,.2f}'.format(sum(bill)))
+        break
+
+    oranges = int(input(f'How many Oranges?'))
+    orange_total.append(oranges)
+
+    apples = int(input(f'How many Apples?'))
+    apples_total.append(apples)
+    total_price = (oranges * orange_price) + (apples * apple_price)
+    bill.append(total_price)
+    # print(bill)
+    # print(orange_total)
+    # print(apples_total)
+    print(customer, f'you bought', oranges, f'Oranges and', apples, f'Apples')
+    print(f'Your bill is', '${:,.2f}'.format(total_price))
