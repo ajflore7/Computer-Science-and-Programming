@@ -1,0 +1,43 @@
+# Q1
+
+# Q2
+RunUnitTest = True
+
+def listletters(text):
+    counts = {}
+    for i in text:
+        if (i in counts.keys()):
+            counts[i] += 1
+        elif (i == ''):
+            continue
+        else:
+            counts[i] = 1
+    return counts
+
+def listwords(text):
+    k = text.split()
+    wordCount = {}
+    for i in k:
+        if (i in wordCount.keys()):
+            wordCount[i] += 1
+        else:
+            wordCount[i] = 1
+    return (wordCount)
+
+text = input("Enter input String:")
+
+print(listletters(text))
+print(listwords(text))
+
+# Q3
+RunUnitTest = True
+
+inventory = {'ibuprofen': 800, 'tylenol': 366, 'advil': 75}
+
+def check_inventory(inventory, low):
+    result = []
+    for x in inventory:
+        if inventory[x] < low:
+            result.append(x)
+    return result
+print(check_inventory(inventory, 400))
