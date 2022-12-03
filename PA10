@@ -1,0 +1,57 @@
+# Q1
+RunUnitTest = True
+
+def HAstros(refstring):
+    sliced = refstring.split(' ')
+    for x in range(len(sliced)):
+        if sliced[x] == 'Astros':
+            if sliced[x-1] != 'Houston':
+                sliced.insert(x, 'Houston')
+    refstring = " ".join(sliced)
+    return refstring
+
+print(HAstros("Astros will play Phillies. Astros will win"))
+
+# Q2
+RunUnitTest = True
+
+druglist = ['tylenol', 'ibuprofen', 'pepto-bismol', 'sudafed', 'robitussin']
+myneeds = ['glucose', 'flour', 'pepto-bismol', 'water', 'tylenol']
+
+def CommonItems(reflist,mylist):
+    commonitems = []
+    for common in reflist:
+        if common in mylist:
+            commonitems.append(common)
+    return commonitems
+def CI2(reflist, mylist):
+    i = 0
+    length = len(mylist)
+    while i < length:
+        if mylist[i] not in reflist:
+            mylist.remove(mylist[i])
+            length = length - 1
+        else: i += 1
+print(CommonItems(['A','E','S','X'],['B','S','Y']))
+print(CommonItems(druglist, myneeds))
+
+# Q3
+RunUnitTest = True
+
+myparagraph = 'In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet'\
+         ' hole, filled with the ends of worms and an oozy smell, no yet a dry,' \
+         ' bare, sandy hole with nothing in it to sit down on or to eat; it was ' \
+         'a hobbit-hole, and that means comfort.'
+def ParaBasics(mypara):
+    words = mypara.split()
+    avg = sum(len(x) for x in words) / len(words)
+    return avg
+def LongWords(mypara):
+    words = mypara.split()
+    long_words = []
+    for x in words:
+        if len(x) >= 8:
+            long_words.append(x)
+    return long_words
+print(LongWords(myparagraph))
+print(ParaBasics(myparagraph))
