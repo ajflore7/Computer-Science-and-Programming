@@ -1,0 +1,58 @@
+# Q1a
+user1_input = input("Enter your last name here")
+user2_input = input("Enter your first name here")
+print(f"Hi " + user2_input.title() + f" " + user1_input.title() + f" Thank you for being a part of my program!")
+
+# Q1b
+user1_input = input("Enter your last name here")
+user2_input = input("Enter your first name here")
+print(f"Hi " + user2_input.title() + f" " + user1_input.title() + f" Thank you for being a part of my program!")
+
+user1_input = input("Enter your last name here")
+user2_input = input("Enter your first name here")
+print(f"Hi " + user2_input.title() + f" " + user1_input.title() + f" Thank you for being a part of my program!")
+
+user1_input = input("Enter your last name here")
+user2_input = input("Enter your first name here")
+print(f"Hi " + user2_input.title() + f" " + user1_input.title() + f" Thank you for being a part of my program!")
+
+# Q2
+user_input1 = float(input("Length of the rectangle?"))
+user_input2 = float(input("Width of the rectangle?"))
+
+perimeter = float(user_input1 + user_input2 + user_input1 + user_input2)
+area = float(user_input1 * user_input2)
+paint = area // 100
+
+print(f"The perimeter of the rectangle with length " + str(user_input1) + f", and width " + str(user_input2) + f", is " + str(perimeter) + f" feet")
+print(f"the area of the rectangle with length " + str(user_input1) + f", and the width " + str(user_input2) + f", is " + str(area))
+print(f"The number of cans needed to paint the rectangle are " + str(paint))
+
+# Q3a
+user_input1 = float(input("Enter the odometer reading at the start of the trip in miles"))
+user_input2 = float(input("Enter the odometer reading at the end of the trip in miles"))
+user_input3 = float(input("Enter the amount of gasoline at the start of the trip in gallons"))
+user_input4 = float(input("Enter the amount of gasoline at the end of the trip in gallons"))
+
+miles_used = user_input2 - user_input1
+gas_used = user_input3 - user_input4
+
+miles_per_gallon = miles_used / gas_used
+
+print(f"Miles per gallon for the car is " + str(miles_per_gallon))
+
+# Q3b
+user_input1 = float(input("Enter the odometer reading at the start of the trip in miles"))
+user_input2 = float(input("Enter the odometer reading at the end of the trip in miles"))
+user_input3 = float(input("Enter the amount of gasoline at the start of the trip in gallons"))
+user_input4 = float(input("Enter the amount of gasoline at the end of the trip in gallons"))
+user_input5 = float(input("Enter the price of gas in dollars per gallon"))
+
+miles_used = user_input2 - user_input1
+gas_used = user_input3 - user_input4
+miles_per_gallon = miles_used / gas_used
+trip_dollars_per_mile = (user_input5 / miles_used)
+remaining_gas = miles_per_gallon * user_input4
+print(f"Miles per gallon for the car is " + str(miles_per_gallon))
+print(f"The cost of the trip in dollars per mile is " + str(trip_dollars_per_mile))
+print(f"Total number of miles car can continue is " + str(remaining_gas))
