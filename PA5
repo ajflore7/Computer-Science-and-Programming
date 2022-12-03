@@ -1,3 +1,4 @@
+# Q1
 import random
 minint = int(input("Please enter an integer for minint \n"))
 maxint = int(input("Please enter an integer for maxint \n"))
@@ -16,3 +17,39 @@ for i in range(5):
     average = numbers / 8
     print("Average of those integers is:", average)
     numbers = 0
+
+# Q2
+import random
+import math
+
+for i in range(3):
+    dangle = random.randint(0, 180)
+    print("The angle selected at random is", dangle)
+    rangle = math.radians(dangle)
+    print("The angle t radians is:", rangle)
+    sine = math.sin(rangle)
+    tan = math.tan(rangle)
+    cose = math.cos(rangle)
+    print("sin(t) =", sine)
+    print("tan(t) =", tan)
+    print("cos(t) =", cose)
+    trig = sine - tan * cose
+    print("sin(t) - tan(t) * cos(t) is: ", trig)
+    print(" ")
+
+#Q3
+import math
+
+radius = float(input("Please enter a radius value: \n"))
+realA = math.pi * radius ** 2
+
+print("The real area of the circle is:", realA)
+areapi = 3.1 * (radius ** 2)
+areapi2 = 3.14 * (radius ** 2)
+areapi3 = 3.141 * (radius ** 2)
+diff1 = ((realA - areapi) / ((realA + areapi) / 2)) * 100
+diff2 = ((realA - areapi2) / ((realA + areapi2) / 2)) * 100
+diff3 = ((realA - areapi3) / ((realA + areapi3) / 2)) * 100
+print("With pi =", 3.1, "the percentage difference is", diff1, "%")
+print("With pi =", 3.14, "the percentage difference is", diff2, "%")
+print("With pi =", 3.141, "the percentage difference is", diff3, "%")
