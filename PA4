@@ -1,0 +1,35 @@
+# Q1
+people = ["jane","Jill","Jack"]
+for name in people:
+    print("Hi " + name.title() + " Thank you for being a part of my program")
+
+# Q2
+number = int(input("How many names"))
+for name in range(3):
+    names = input("Please enter a name")
+    print("Hi " + str(names.title()) + " Thank you for being a part of my program!")
+
+# Q3
+lines = int(input("How many lines?"))
+
+lengths = int(input("Length of the lines?"))
+
+symbol = input("Enter a Symbol:")
+
+for line in range(0, lines):
+    print(symbol * lengths)
+    
+# Q4
+pop = int(input("Enter the Population of the state (in millions)"))
+vaccinated = int(input("Enter the Number of people already vaccinated (in millions)"))
+rate = float(input("Enter the Current weekly vaccination rate (in millions)"))
+incr = float(input("Enter the Weekly Increase in vaccination Rate as a percentage (WIR)"))
+incr = incr / 100
+
+for week in range(1, 11):
+    vaccinated = vaccinated + rate
+    print("num of vaccinated in week", week, "is", vaccinated)
+    rate = (rate * incr) + rate
+
+percent = (vaccinated/pop)*100
+print("Total vaccinated after 10 weeks is", percent)
