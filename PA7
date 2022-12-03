@@ -1,0 +1,84 @@
+# Q1
+def getWeatherMessage(temp,humidity,windspeed):
+    weather_message = "Weather not known"
+    if 66.5 <= temp <= 76.0 and humidity < 50 and windspeed < 8:
+        weather_message = "Good"
+    elif temp > 88.0 or temp < 42.0 or humidity > 80 or windspeed > 25:
+        weather_message = "Bad"
+    else:
+        weather_message = "OK"
+
+    return weather_message
+
+for x in range(3):
+    tempNow = float(input("What is the temperature in Fahrenheit?"))
+    humidityNow = float(input("What is the humidity in %?"))
+    windspeedNow = float(input("What is the windspeed in miles/hour?"))
+
+    weather = getWeatherMessage(tempNow, humidityNow, windspeedNow)
+    print(f'The weather is', weather, "\n")
+
+# Q2
+def IsExpired(months,decayrate):
+    potency = 100
+    for x in range(months):
+        potency = potency * (1 - (decayrate/100))
+    if potency < 50:
+        return True
+    else:
+        return False
+    
+decayrate = float(input('What is the decayrate?'))
+print(IsExpired(10, 10.0))
+print(IsExpired(15, 4.5))
+
+# Q3
+
+def NominalGrade(Ascore, Escore):
+    weighted = float((Ascore+Escore) / 2)
+    if weighted >= 86:
+        return 4
+    elif weighted >= 74 and weighted < 86:
+        return 3
+    elif weighted >= 62 and weighted < 74:
+        return 2
+    elif weighted >= 50 and weighted < 62:
+        return 1
+    else:
+        return 0
+
+def TrueGrade(Ascore, Escore):
+    letter_grade = NominalGrade(Ascore, Escore)
+
+    grade_A = "A"
+    grade_B = "B"
+    grade_C = "C"
+    grade_D = "D"
+    grade_F = "F"
+
+    if letter_grade == 4:
+        if Escore < 74:
+            return grade_B
+        else:
+            return grade_A
+        
+    elif letter_grade == 3:
+        if Escore < 62:
+            return grade_C
+        else:
+            return grade_B
+        
+    elif letter_grade == 2:
+        if Escore < 50:
+            return grade_B
+        else:
+            return grade_C
+        
+    elif letter_grade == 1:
+        return grade_D
+    else:
+        return grade_F
+print(NominalGrade(96, 84))
+print(TrueGrade(96, 84))
+print(NominalGrade(96,54))
+print(TrueGrade(96, 54))
