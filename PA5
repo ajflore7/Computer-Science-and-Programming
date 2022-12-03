@@ -1,0 +1,18 @@
+import random
+minint = int(input("Please enter an integer for minint \n"))
+maxint = int(input("Please enter an integer for maxint \n"))
+
+midpoint = (minint + maxint) / 2
+numbers = 0
+
+print("minint:", minint, "maxint:", maxint, "midpoint:", midpoint)
+
+for i in range(5):
+    print("Randomly selected integers are:")
+    for number in range(8):
+        random_int = random.randint(minint, maxint)
+        print(random_int)
+        numbers = numbers + random_int
+    average = numbers / 8
+    print("Average of those integers is:", average)
+    numbers = 0
