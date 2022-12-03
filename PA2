@@ -1,0 +1,26 @@
+# Q1a
+quiz1 = int(input('Enter Quiz 1 grade: '))
+quiz2 = int(input('Enter Quiz 2 grade: '))
+final = int(input('Enter exam grade: ')) # error on this line, can not be a string needs to be an intger, type error
+
+quiz_average = (quiz1 + quiz2) / 2 # error on this line, an extra parenthesis, syntax error
+total = quiz_average * 0.5 + final * 0.5
+print('Your class grade is:', total) # the word total is a variable, should not be in a string, name error
+
+# Q1b
+quiz1 = int(input('Enter Quiz 1 grade: '))
+quiz2 = int(input('Enter Quiz 2 grade: '))
+final = int(input('Enter exam grade: ')) # error on this line, can not be a string needs to be an intger
+
+quiz_average = (quiz1 *0.6 + quiz2 * 0.4) / 2 # error on this line, an extra parenthesis
+total = quiz_average + final * 0.5
+print('Your class grade is:', total) # the word total is a variable, should not be in a string
+
+# Q2
+population = int(input("Enter population of the state (in millions)"))
+vaccinated = int(input("Enter number of people already vaccinated (in millions)"))
+weekly_vaccination_rate = int(input("Enter weekly vaccination rate (in millions)"))
+herd_immunity = int(input("Enter target time period to reach herd immunity (in weeks)"))
+
+end_of_period = (((herd_immunity * weekly_vaccination_rate) + vaccinated) / (population) * 100)
+print(end_of_period)
